@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <form string="Lịch sử khấu hao">
                     <sheet>
+                    
                         <group col="2">
                             <group string="Thông tin chung">
                                 <field name="ma_phieu_khau_hao" string="Mã phiếu"/>
