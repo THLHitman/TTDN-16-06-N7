@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_room_booking" model="ir.actions.act_window">
+        <field name="name">Lịch đặt phòng họp</field>
+        <field name="res_model">room.booking</field>
+        <field name="view_mode">calendar,tree,form</field>
+    </record>
+
+    <record id="action_room_meeting" model="ir.actions.act_window">
+        <field name="name">Cấu hình Phòng họp</field>
+        <field name="res_model">room.meeting</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_office_root" name="Quản lý Văn phòng" sequence="10"/>
+
+    <menuitem id="menu_room_group" name="Phòng họp" parent="menu_office_root" sequence="10"/>
+    <menuitem id="menu_booking_sub" name="Đăng ký mượn phòng" parent="menu_room_group" action="action_room_booking" sequence="10"/>
+    <menuitem id="menu_room_config" name="Danh mục Phòng họp" parent="menu_room_group" action="action_room_meeting" sequence="20"/>
+
+    <menuitem id="menu_asset_group" name="Tài sản" parent="menu_office_root" sequence="20"/>
+    
+    
+</odoo>

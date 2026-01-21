@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree view -->
+        <record id="view_dat_phong_tree" model="ir.ui.view">
+            <field name="name">dat.phong.tree</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách đặt phòng">
+                    <field name="ma_dat_phong"/>
+                    <field name="ma_phong_hop"/>
+                    <field name="ten_phong_hop"/>
+                    <field name="nguoi_dat"/>
+                    <field name="ngay_dat"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_dat_phong_form" model="ir.ui.view">
+            <field name="name">dat.phong.form</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <form string="Thông tin đặt phòng">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ma_dat_phong"/>
+                                <field name="nguoi_dat"/>
+                                <field name="ngay_dat"/>
+                            </group>
+                            <group>
+                                <field name="ma_phong_hop"/>
+                                <field name="ten_phong_hop"/>
+                            </group>
+                        </group>
+
+                        <group string="Mục đích">
+                            <field name="muc_dich"/>
+                        </group>
+
+                        <group string="Ghi chú">
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_dat_phong" model="ir.actions.act_window">
+            <field name="name">Quản lý đặt phòng</field>
+            <field name="res_model">dat_phong</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

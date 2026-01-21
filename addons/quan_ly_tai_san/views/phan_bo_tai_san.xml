@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_phan_bo_tai_san_form" model="ir.ui.view">
+            <field name="name">phan_bo_tai_san.view.form</field>
+            <field name="model">phan_bo_tai_san</field>
+            <field name="arch" type="xml">
+                <form string="Phân Bổ Tài Sản">
+                    <sheet>
+                        <group col="2">
+                            <group string="Thông tin phân bổ">
+                                <field name="tai_san_id" string="Tài sản"
+                                       domain="['|', ('trang_thai_thanh_ly', '=', 'chua_phan_bo'), ('trang_thai_thanh_ly', '=', 'chua_thanh_ly')]"/>
+                                <field name="phong_ban_id" string="Phòng ban"/>
+                                <field name="nhan_vien_su_dung_id" string="Nhân viên sử dụng"/>
+                                <field name="ngay_phat" string="Ngày phân bổ"/>
+                            </group>
+                            <group string= " Trạng thái">
+                                <field name="room_id" string="Phòng họp (nếu có)"/>
+                                <field name="trang_thai"/>
+                                <field name="ghi_chu"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_phan_bo_tai_san_tree" model="ir.ui.view">
+            <field name="name">phan_bo_tai_san.view.tree</field>
+            <field name="model">phan_bo_tai_san</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách phân bổ tài sản" decoration-muted="trang_thai == 'not-in-use'">
+                    <field name="tai_san_id"/>
+                    <field name="phong_ban_id"/>
+                    <field name="room_id"/>
+                    <field name="nhan_vien_su_dung_id"/>
+                    <field name="ngay_phat"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_phan_bo_tai_san_search" model="ir.ui.view">
+            <field name="name">phan_bo_tai_san.view.search</field>
+            <field name="model">phan_bo_tai_san</field>
+            <field name="arch" type="xml">
+                <search string="Tìm kiếm phân bổ tài sản">
+                    <field name="tai_san_id"/>
+                    <field name="phong_ban_id"/>
+                    <field name="nhan_vien_su_dung_id"/>
+                    <field name="ngay_phat"/>
+                    <field name="trang_thai"/>
+                    
+                    <filter string="Đang sử dụng" name="in_use" 
+                            domain="[('trang_thai', '=', 'in-use')]"/>
+                    <filter string="Không sử dụng" name="not_in_use" 
+                            domain="[('trang_thai', '=', 'not-in-use')]"/>
+                    
+                    <group expand="0" string="Nhóm theo">
+                        <filter string="Phòng ban" name="group_phong_ban" 
+                                context="{'group_by': 'phong_ban_id'}"/>
+                        <filter string="Trạng thái" name="group_trang_thai" 
+                                context="{'group_by': 'trang_thai'}"/>
+                        <filter string="Ngày phân bổ" name="group_date" 
+                                context="{'group_by': 'ngay_phat'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="phan_bo_tai_san_action" model="ir.actions.act_window">
+            <field name="name">Phân Bổ Tài Sản</field>
+            <field name="res_model">phan_bo_tai_san</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_in_use': 1}</field>
+        </record>
+    </data>
+</odoo>

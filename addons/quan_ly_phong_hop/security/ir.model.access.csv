@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_room_meeting,room.meeting,model_room_meeting,base.group_user,1,1,1,1
+access_room_booking,room.booking,model_room_booking,base.group_user,1,1,1,1
+access_room_booking_participant,room.booking.participant,model_room_booking_participant,base.group_user,1,1,1,1
+access_room_booking_service,room.booking.service,model_room_booking_service,base.group_user,1,1,1,1
+access_room_booking_approval,room.booking.approval,model_room_booking_approval,base.group_user,1,1,1,1
+access_room_booking_asset_check,room.booking.asset.check,model_room_booking_asset_check,base.group_user,1,1,1,1

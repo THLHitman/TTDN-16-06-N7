@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_room_booking_calendar" model="ir.ui.view">
+        <field name="name">room.booking.calendar</field>
+        <field name="model">room.booking</field>
+        <field name="arch" type="xml">
+            <calendar string="Lịch đặt phòng" 
+                      date_start="start_time" 
+                      date_stop="end_time" 
+                      color="room_id">
+                <field name="employee_id"/>
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_room_booking_tree" model="ir.ui.view">
+        <field name="name">room.booking.tree</field>
+        <field name="model">room.booking</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'" decoration-success="state == 'confirm'">
+                <field name="employee_id"/>
+                <field name="room_id"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_room_booking" model="ir.actions.act_window">
+        <field name="name">Lịch đặt phòng họp</field>
+        <field name="res_model">room.booking</field>
+        <field name="view_mode">calendar,tree,form</field>
+    </record>
+    <record id="view_room_booking_form" model="ir.ui.view">
+        <field name="name">room.booking.form</field>
+        <field name="model">room.booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" string="Xác nhận" type="object" states="draft" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Mục đích họp"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="room_id"/>
+                        </group>
+                        <group>
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Thành phần tham dự">
+                            <field name="participant_ids">
+                                <tree editable="bottom">
+                                    <field name="employee_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Dịch vụ đi kèm">
+                            <field name="service_ids">
+                                <tree editable="bottom">
+                                    <field name="service_type"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <!-- <page string="Kiểm tra tài sản">
+                            <field name="asset_check_ids"
+                                context="{'default_booking_id': active_id}">
+                                <tree editable="bottom">
+                                    <field name="phan_bo_tai_san_id"/>
+                                    <field name="check_type"/>
+                                    <field name="state"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page> -->
+                        <page string="Lịch sử phê duyệt">
+                            <field name="approval_ids" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <menuitem id="menu_booking_sub" 
+              name="Đăng ký mượn phòng" 
+              parent="menu_room_root" 
+              action="action_room_booking" 
+              sequence="10"/>
+</odoo>

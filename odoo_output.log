@@ -1,0 +1,47 @@
+2026-01-19 15:32:02,117 152551 INFO ? odoo: Odoo version 15.0 
+2026-01-19 15:32:02,118 152551 INFO ? odoo: Using configuration file at /home/user/TTDN-16-06-N7/odoo.conf 
+2026-01-19 15:32:02,118 152551 INFO ? odoo: addons paths: ['/home/user/TTDN-16-06-N7/odoo/addons', '/home/user/.local/share/Odoo/addons/15.0', '/home/user/TTDN-16-06-N7/addons'] 
+2026-01-19 15:32:02,118 152551 INFO ? odoo: database: odoo@localhost:5431 
+2026-01-19 15:32:02,420 152551 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2026-01-19 15:32:02,708 152551 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-B5631V5.localdomain:8069 
+2026-01-19 15:32:07,536 152551 INFO ? odoo.http: HTTP Configuring static files 
+2026-01-19 15:32:07,565 152551 INFO admin odoo.modules.loading: loading 1 modules... 
+2026-01-19 15:32:07,575 152551 INFO admin odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-01-19 15:32:07,578 152551 WARNING admin odoo.modules.module: Missing `license` key in manifest for 'quan_ly_tai_san', defaulting to LGPL-3 
+2026-01-19 15:32:07,584 152551 WARNING admin odoo.modules.module: Missing `license` key in manifest for 'quan_ly_phong_hop', defaulting to LGPL-3 
+2026-01-19 15:32:07,585 152551 WARNING admin odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-01-19 15:32:07,589 152551 INFO admin odoo.modules.graph: module quan_ly_tai_san: Unmet dependencies: nhan_su  
+2026-01-19 15:32:07,590 152551 INFO admin odoo.modules.loading: loading 24 modules... 
+2026-01-19 15:32:07,593 152551 WARNING admin odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-01-19 15:32:07,644 152551 WARNING admin odoo.modules.module: Missing `license` key in manifest for 'quan_ly_phong_hop', defaulting to LGPL-3 
+2026-01-19 15:32:07,936 152551 INFO admin odoo.modules.loading: 24 modules loaded in 0.35s, 0 queries (+0 extra) 
+2026-01-19 15:32:08,004 152551 ERROR admin odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['quan_ly_tai_san'] 
+2026-01-19 15:32:08,005 152551 INFO admin odoo.modules.loading: Modules loaded. 
+2026-01-19 15:32:08,010 152551 INFO admin odoo.modules.registry: Registry loaded in 0.468s 
+2026-01-19 15:32:08,013 152551 INFO admin odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-01-19 15:32:08,174 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:08] "[32mGET / HTTP/1.1[0m" 303 - 17 0.029 0.604
+2026-01-19 15:32:08,249 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model asset.dashboard 
+2026-01-19 15:32:08,254 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model danh_muc_tai_san 
+2026-01-19 15:32:08,257 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model lich_su_khau_hao 
+2026-01-19 15:32:08,261 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model kiem_ke_tai_san 
+2026-01-19 15:32:08,266 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model luan_chuyen_tai_san 
+2026-01-19 15:32:08,270 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model don_muon_tai_san 
+2026-01-19 15:32:08,285 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model tai_san 
+2026-01-19 15:32:08,288 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model thanh_ly_tai_san 
+2026-01-19 15:32:08,292 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model muon_tra_tai_san 
+2026-01-19 15:32:08,316 152551 ERROR admin odoo.addons.base.models.ir_model: Missing model phan_bo_tai_san 
+2026-01-19 15:32:08,839 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:08] "GET /web HTTP/1.1" 200 - 249 0.325 0.332
+2026-01-19 15:32:09,630 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:09] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.007 0.008
+2026-01-19 15:32:10,013 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /web/action/load HTTP/1.1" 200 - 15 0.028 0.048
+2026-01-19 15:32:10,049 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 20 0.083 0.026
+2026-01-19 15:32:10,400 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /web/dataset/call_kw/nhan_vien/load_views HTTP/1.1" 200 - 28 0.038 0.018
+2026-01-19 15:32:10,536 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /mail/init_messaging HTTP/1.1" 200 - 63 0.095 0.036
+2026-01-19 15:32:10,759 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /web/dataset/search_read HTTP/1.1" 200 - 7 0.013 0.007
+2026-01-19 15:32:10,917 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.041 0.009
+2026-01-19 15:32:10,921 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:10] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.008 0.048
+2026-01-19 15:32:11,095 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:32:11] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 2 0.003 0.005
+2026-01-19 15:32:14,575 152551 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-01-19 15:33:01,466 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:33:01] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.006
+2026-01-19 15:33:04,617 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:33:04] "POST /longpolling/poll HTTP/1.1" 200 - 13 0.020 50.057
+2026-01-19 15:33:52,493 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:33:52] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.007 0.009
+2026-01-19 15:33:55,064 152551 INFO admin werkzeug: 127.0.0.1 - - [19/Jan/2026 15:33:55] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.009 50.120
