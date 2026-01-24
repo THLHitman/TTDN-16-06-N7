@@ -48,11 +48,32 @@
             </field>
         </record>
 
+        <!-- Calendar view -->
+        <record id="view_dat_phong_calendar" model="ir.ui.view">
+            <field name="name">dat.phong.calendar</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <calendar
+                    string="Lịch đặt phòng họp"
+                    date_start="start_time"
+                    date_stop="end_time"
+                    color="ma_phong_hop">
+
+                    <field name="ma_dat_phong"/>
+                    <field name="ten_phong_hop"/>
+                    <field name="nguoi_dat"/>
+                    <field name="muc_dich"/>
+
+                </calendar>
+            </field>
+        </record>
+
+
         <!-- Action -->
         <record id="action_dat_phong" model="ir.actions.act_window">
             <field name="name">Quản lý đặt phòng</field>
             <field name="res_model">dat_phong</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
         </record>
     </data>
 </odoo>
