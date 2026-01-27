@@ -87,17 +87,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <!-- <page string="Kiểm tra tài sản">
-                            <field name="asset_check_ids"
-                                context="{'default_booking_id': active_id}">
-                                <tree editable="bottom">
-                                    <field name="phan_bo_tai_san_id"/>
-                                    <field name="check_type"/>
-                                    <field name="state"/>
-                                    <field name="note"/>
-                                </tree>
-                            </field>
-                        </page> -->
+
                         <page string="Lịch sử phê duyệt">
                             <field name="approval_ids" readonly="1"/>
                         </page>
