@@ -124,26 +124,26 @@ class RoomBooking(models.Model):
             })
 
         prompt = f"""
-Bạn là hệ thống AI gợi ý phòng họp trong doanh nghiệp.
+            Bạn là hệ thống AI gợi ý phòng họp trong doanh nghiệp.
 
-Thông tin cuộc họp:
-- Số người tham dự: {self.participant_count}
-- Thời gian: {self.start_time} đến {self.end_time}
+            Thông tin cuộc họp:
+            - Số người tham dự: {self.participant_count}
+            - Thời gian: {self.start_time} đến {self.end_time}
 
-Danh sách phòng (busy = true là đã có lịch):
-{json.dumps(room_data, ensure_ascii=False)}
+            Danh sách phòng (busy = true là đã có lịch):
+            {json.dumps(room_data, ensure_ascii=False)}
 
-Yêu cầu:
-- Chỉ chọn phòng có busy = false
-- Sức chứa >= số người tham dự
-- Nếu nhiều phòng phù hợp, chọn phòng có sức chứa nhỏ nhất nhưng vẫn đủ
+            Yêu cầu:
+            - Chỉ chọn phòng có busy = false
+            - Sức chứa >= số người tham dự
+            - Nếu nhiều phòng phù hợp, chọn phòng có sức chứa nhỏ nhất nhưng vẫn đủ
 
-Chỉ trả về JSON hợp lệ:
-{{
-  "recommended_room_id": number,
-  "reason": string
-}}
-"""
+            Chỉ trả về JSON hợp lệ:
+            {{
+            "recommended_room_id": number,
+            "reason": string
+            }}
+            """
 
         try:
             response = model.generate_content(prompt)
