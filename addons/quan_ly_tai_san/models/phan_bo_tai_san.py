@@ -60,6 +60,7 @@ class PhanBoTaiSan(models.Model):
         store=False
     )
 
+    
     # =====================
     # SQL Constraints
     # =====================
@@ -95,18 +96,27 @@ class PhanBoTaiSan(models.Model):
                     _('Phải chọn Phòng ban hoặc Phòng họp.')
                 )
                 
-    # @api.depends('tai_san_id', 'phong_ban_id', 'room_id')
-    # def _compute_display_name(self):
-    #     for record in self:
-    #         parts = []
+    @api.depends('tai_san_id', 'phong_ban_id', 'room_id')
+    def _compute_display_name(self):
+        for record in self:
+            parts = []
 
-    #         if record.tai_san_id:
-    #             parts.append(record.tai_san_id.cus_rec_name)
+            if record.tai_san_id:
+                parts.append(record.tai_san_id.cus_rec_name)
 
-    #         if record.phong_ban_id:
-    #             parts.append(record.phong_ban_id.ten_phong_ban)
+            if record.phong_ban_id:
+                parts.append(record.phong_ban_id.ten_phong_ban)
 
-    #         if record.room_id:
-    #             parts.append(record.room_id.name)
+            if record.room_id:
+                parts.append(record.room_id.name)
 
-    #         record.display_name = " - ".join(parts) if parts else _("Phân bổ mới")
+            record.display_name = " - ".join(parts) if parts else _("Phân bổ mới")
+    @api.depends('tai_san_id', 'phong_ban_id', 'room_id')
+    def _compute_ten_hien_thi(self):
+        for r in self:
+            if r.room_id:
+                r.ten_hien_thi = f"{r.tai_san_id.name} - {r.room_id.name}"
+            elif r.phong_ban_id:
+                r.ten_hien_thi = f"{r.tai_san_id.name} - {r.phong_ban_id.name}"
+            else:
+                r.ten_hien_thi = r.tai_san_id.name or "Tài sản"

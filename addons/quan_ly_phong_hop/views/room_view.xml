@@ -43,7 +43,9 @@
                         <group> 
                             <field name="note" string="Ghi chú về phòng họp"/>
                         </group>
-                        
+                        <group>
+                            <field name="capacity" string="Sức chứa" />
+                        </group>
                     </group>
                     
                 </sheet>
