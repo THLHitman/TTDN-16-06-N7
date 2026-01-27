@@ -9,4 +9,14 @@ class LuanChuyenTaiSanLine(models.Model):
     phan_bo_tai_san_id = fields.Many2one('phan_bo_tai_san', string='Tài sản', required=True, ondelete='cascade')
     so_luong = fields.Integer('Số lượng luân chuyển', default = 1, readonly=True)
     ghi_chu = fields.Char('Ghi chú', default='')
-           
+    
+    # Override để hiển thị tên đúng
+    def name_get(self):
+        result = []
+        for record in self:
+            if record.phan_bo_tai_san_id:
+                name = f"{record.phan_bo_tai_san_id.name or 'N/A'}"
+            else:
+                name = "Chưa chọn tài sản"
+            result.append((record.id, name))
+        return result
