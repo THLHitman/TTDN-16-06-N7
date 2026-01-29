@@ -91,6 +91,7 @@
                             <field name="approval_ids" readonly="1"/>
                         </page>
                     </notebook>
+   
                 </sheet>
             </form>
         </field>
