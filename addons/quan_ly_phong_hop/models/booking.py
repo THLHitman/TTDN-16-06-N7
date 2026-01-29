@@ -27,6 +27,7 @@ class RoomBooking(models.Model):
     room_id = fields.Many2one(
         'room.meeting',
         string='Phòng họp'
+        required=True
     )
 
     state = fields.Selection([
